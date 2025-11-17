@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+
+  
+
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+.footer_animate { 
+  animation: animate-right linear infinite;
+ 
+}
+
+@keyframes animate-right {
+  
+   0%, 100% {
+    transform: translate3d(0, 0, 0) rotateZ(0.01deg);
+}
+}
