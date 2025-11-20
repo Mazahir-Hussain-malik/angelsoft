@@ -38,7 +38,7 @@ export default function Navbar() {
       <motion.nav
         className="fixed top-0 left-0 w-full px-6 z-50"
         initial={{ marginTop: "4rem" }}
-        animate={{ marginTop: isScrolled ? "0rem" : "4rem" }}
+        animate={{ marginTop: isScrolled ? "0rem" : "2.9rem" }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
         aria-label="Primary"
       >
@@ -67,8 +67,8 @@ export default function Navbar() {
                       href={item.href}
                       className={
                         (pathname == item.href
-                          ? "px-4 py-2 rounded-md bg-[#264b78]/20 text-[#264b78] font-semibold"
-                          : "text-[#937c39] px-4 py-2 rounded-md hover:bg-[#264b78]/30 hover:text-[#264b78] transition-colors duration-200") +
+                          ? "px-4 py-2 rounded-md bg-[#264b78]/10 text-[#264b78] font-semibold"
+                          : "text-[#937c39] px-4 py-2 rounded-md hover:bg-[#264b78]/15 hover:text-[#264b78] transition-colors duration-200") +
                         " text-sm"
                       }
                     >

@@ -18,7 +18,11 @@ interface Bubble {
   size: number;
 }
 
-const HeroTitle: React.FC<HeroTitleProps> = ({ title, leftText, rightText }) => {
+const HeroTitle: React.FC<HeroTitleProps> = ({
+  title,
+  leftText,
+  rightText,
+}) => {
   const [bubbles, setBubbles] = useState<Bubble[]>([]);
 
   const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
@@ -35,22 +39,44 @@ const HeroTitle: React.FC<HeroTitleProps> = ({ title, leftText, rightText }) => 
     }, 2000);
   };
 
- 
-
   return (
     <div
       className="relative min-h-[65vh] flex items-center justify-center bg-gradient-to-r from-black/70 to-black/50 overflow-hidden"
       onMouseMove={handleMouseMove}
     >
-      {/* Background Image */}
-      <div
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: "url(/homepage/slide2.png)",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
+      <motion.div
+        initial={{ scale: 1.2 }}
+        animate={{
+          scale: 1.4,
+          x: [-40, 40],
+          y: [-20, 20],
         }}
-      />
+        transition={{
+          scale: { duration: 10, ease: "easeOut" },
+          x: {
+            duration: 20,
+            ease: "linear",
+            repeat: Infinity,
+            repeatType: "mirror",
+          },
+          y: {
+            duration: 25,
+            ease: "linear",
+            repeat: Infinity,
+            repeatType: "mirror",
+          },
+        }}
+        className="absolute inset-0 z-0"
+      >
+        <div
+          className="w-full h-full"
+          style={{
+            backgroundImage: "url(/homepage/slide2.png)",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        />
+      </motion.div>
 
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/60 z-0" />

@@ -45,7 +45,7 @@ const social_icons = [
 
 export default function Header() {
   return (
-    <div className="text-white py-4 px-6 absolute  top-0 w-full z-50">
+    <div className="text-white py-2 px-6 absolute  top-0 w-full z-50">
       <div className="max-w-7xl mx-auto flex items-center justify-between text-xs">
 
         {/* Left Section - Social Icons */}

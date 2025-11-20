@@ -1,159 +1,167 @@
-'use client'
+"use client"
 
-import { useState } from 'react'
-import { Check, Calendar, User } from 'lucide-react'
-import { motion } from "framer-motion";
-
-
-
-
+import { useState } from "react"
+import { Check } from "lucide-react"
 
 export default function PricingPlan() {
-  const [activeTab, setActiveTab] = useState('ecommerce')
+  const [activeTab, setActiveTab] = useState("ecommerce")
 
   const ecommercePlans = [
     {
-      title: 'BigCommerce Plan',
-      price: '$3,000',
+      title: "BigCommerce Plan",
+      price: "$3,000",
       description:
-        'Get a BigCommerce website with up to 15 static pages. The plan comes with Standard or Plus hosting, free domain registration, and free maintenance for up to 3 months.',
-      feature: 'Free Domain & Web Hosting',
+        "Get a BigCommerce website with up to 15 static pages. The plan comes with Standard or Plus hosting, free domain registration, and free maintenance for up to 3 months.",
+      feature: "Free Domain & Web Hosting",
     },
     {
-      title: 'Shopify Plan',
-      price: '$2,500',
+      title: "Shopify Plan",
+      price: "$2,500",
       description:
-        'Get a Shopify website with up to 15 static pages. The plan comes with Basic or Regular hosting, free domain registration, and free maintenance for up to 3 months.',
-      feature: 'Free Domain & Web Hosting',
+        "Get a Shopify website with up to 15 static pages. The plan comes with Basic or Regular hosting and free domain registration, and free maintenance for up to 3 months.",
+      feature: "Free Domain & Web Hosting",
     },
     {
-      title: 'WooCommerce Plan',
-      price: '$2,000',
+      title: "WooCommerce Plan",
+      price: "$2,000",
       description:
-        'Get a WordPress website that allows you to sell products online. Comes with free hosting, free domain registration and 3 months free maintenance.',
-      feature: 'Free Domain & Web Hosting',
+        "Get a WordPress website that allows you to sell products online. The plan comes with a free web hosting, free domain registration, and free maintenance for up to 3 months.",
+      feature: "Free Domain & Web Hosting",
     },
   ]
 
+  const wordpressPlans = [
+    {
+      title: "Basic WordPress Plan",
+      price: "$1,500",
+      description:
+        "Get a professional WordPress website with up to 10 pages. The plan includes responsive design, SEO optimization, free domain registration, and free maintenance for up to 3 months.",
+      feature: "Free Domain & Web Hosting",
+    },
+    {
+      title: "Business WordPress Plan",
+      price: "$2,200",
+      description:
+        "Get an advanced WordPress website with up to 20 pages. The plan includes custom theme development, premium plugins, free domain registration, and free maintenance for up to 6 months.",
+      feature: "Free Domain & Web Hosting",
+    },
+    {
+      title: "Enterprise WordPress Plan",
+      price: "$3,500",
+      description:
+        "Get a fully customized WordPress website with unlimited pages. The plan includes advanced functionality, custom plugins, free domain registration, and free maintenance for up to 12 months.",
+      feature: "Free Domain & Web Hosting",
+    },
+  ]
+
+  const currentPlans = activeTab === "ecommerce" ? ecommercePlans : wordpressPlans
+
   return (
-    <>
-      {/* PRICING SECTION */}
-      <section className="relative  min-h-screen bg-[#f7f7f7] py-20 px-4 overflow-hidden">
-
-        {/* DOT PATTERNS + SHAPES */}
-        <div className="absolute top-24 left-12 w-16 h-16 grid grid-cols-6 grid-rows-6 gap-1.5 opacity-20">
-          {Array.from({ length: 36 }).map((_, i) => (
-            <div key={i} className="w-1 h-1 rounded-full bg-gray-400" />
-          ))}
-        </div>
-
-        <div className="absolute top-20 right-32 w-40 h-40 rounded-full bg-gray-300/30" />
-
-        <div className="absolute bottom-32 right-20 w-32 h-32 grid grid-cols-8 grid-rows-8 gap-1.5 opacity-20">
-          {Array.from({ length: 64 }).map((_, i) => (
-            <div key={i} className="w-1 h-1 rounded-full bg-gray-400" />
-          ))}
-        </div>
-
-        <div className="max-w-7xl mx-auto">
-
-          {/* HEADER */}
-          <div className="text-center mb-12">
-            <h2 className="text-5xl md:text-6xl font-bold mb-2">
-              <span className="text-[#937c39]">Choose The</span>
-            </h2>
-            <h2 className="text-5xl md:text-6xl font-bold mb-2">
-              <span className="text-[#2c4a6f]">Pricing Plan</span>
-            </h2>
-            <h2 className="text-5xl md:text-6xl font-bold">
-              <span className="text-[#937c39]">That Suits Your Needs</span>
-            </h2>
-          </div>
-
-          {/* TABS */}
-          <div className="flex justify-center gap-3 mb-16">
-            <button
-              onClick={() => setActiveTab('ecommerce')}
-              className={`px-8 py-3 rounded-full text-base font-medium transition-all ${
-                activeTab === 'ecommerce'
-                  ? 'bg-[#3d5a80] text-white shadow-md'
-                  : 'bg-white text-gray-700 hover:bg-gray-50'
-              }`}
-            >
-              Ecommerce Plans
-            </button>
-
-            <button
-              onClick={() => setActiveTab('wordpress')}
-              className={`px-8 py-3 rounded-full text-base font-medium transition-all ${
-                activeTab === 'wordpress'
-                  ? 'bg-[#3d5a80] text-white shadow-md'
-                  : 'bg-white text-gray-700 hover:bg-gray-50'
-              }`}
-            >
-              WordPress Plans
-            </button>
-          </div>
-
-          {/* PRICING CARDS */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-  {ecommercePlans.map((plan, index) => (
-    <div
-      key={index}
-      className="rounded-3xl p-8 min-h-[30vh]  hover:border hover:border-[#2c4a6f] flex flex-col relative transition-all duration-300 hover:shadow-outer hover:-translate-y-2 group"
-      style={{
-        backgroundImage: 'url("/homepage/price_bg_bg.png")',
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
-      
-      }}
-    >
-      <div className="mb-6">
-        <h3 className="text-[#937c39] text-xl font-semibold mb-4">{plan.title}</h3>
-        <div className="text-[#2c4a6f] text-5xl font-bold mb-6">{plan.price}</div>
-        <p className="text-gray-600 text-sm leading-relaxed">{plan.description}</p>
+    <section className="relative min-h-screen bg-[#f7f7f7] py-20 px-4 overflow-hidden">
+      {/* Decorative Elements */}
+      <div className="absolute top-24 left-12 w-20 h-20 grid grid-cols-6 grid-rows-6 gap-2 opacity-20">
+        {Array.from({ length: 36 }).map((_, i) => (
+          <div key={i} className="w-1.5 h-1.5 rounded-full bg-gray-400" />
+        ))}
       </div>
 
-      <div className="flex items-center gap-3 mb-8 mt-auto">
-        <div className="w-6 h-6 rounded-full bg-[#3d5a80] flex items-center justify-center flex-shrink-0">
-          <Check className="w-4 h-4 text-white" />
-        </div>
-        <span className="text-[#937c39] text-sm font-medium">{plan.feature}</span>
+      <div className="absolute top-20 right-32 w-48 h-48 rounded-full bg-gray-300/20" />
+
+      <div className="absolute bottom-32 right-20 w-36 h-36 grid grid-cols-8 grid-rows-8 gap-2 opacity-20">
+        {Array.from({ length: 64 }).map((_, i) => (
+          <div key={i} className="w-1.5 h-1.5 rounded-full bg-gray-400" />
+        ))}
       </div>
 
-      <button className="w-full py-3.5 rounded-full text-[#937c39] font-medium text-base bg-gray-50 hover:bg-gray-100 transition-colors flex items-center justify-center gap-2 group-hover:bg-[#937c39] group-hover:text-white">
-        Read More
-        <svg
-          className="w-4 h-4 transition-transform group-hover:translate-x-1"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-        </svg>
-      </button>
-
-      {/* floating shapes */}
-      <div className="absolute top-6 right-6 w-8 h-8 rounded-full bg-gray-100 opacity-50" />
-      <div className="absolute bottom-6 left-6 w-8 h-8 rounded-full bg-gray-100 opacity-50" />
-    </div>
-  ))}
-</div>
-
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-5xl md:text-6xl font-bold mb-2">
+            <span className="text-[#937c39]">Choose The</span>
+          </h2>
+          <h2 className="text-5xl md:text-6xl font-bold mb-2">
+            <span className="text-[#2c4a6f]">Pricing Plan</span>
+          </h2>
+          <h2 className="text-5xl md:text-6xl font-bold">
+            <span className="text-[#937c39]">That Suits Your Needs</span>
+          </h2>
         </div>
-      </section>
 
-      {/* BLOG SECTION */}
-      <section className="relative bg-[#f5f5f7] py-20 px-4 overflow-hidden">
+        {/* Tabs */}
+        <div className="flex justify-center gap-4 mb-16">
+          <button
+            onClick={() => setActiveTab("ecommerce")}
+            className={`px-10 py-3.5 rounded-full text-base font-medium transition-all ${
+              activeTab === "ecommerce"
+                ? "bg-[#3d5a80] text-white shadow-lg"
+                : "bg-white text-gray-700 hover:bg-gray-50"
+            }`}
+          >
+            Ecommerce Plans
+          </button>
 
-        {/* vertical lines */}
-        <div className="absolute inset-0 pointer-events-none flex justify-center">
-          <div className="w-px h-full bg-gray-200/50 mx-[16.66%]"></div>
-          <div className="w-px h-full bg-gray-200/50 mx-[16.66%]"></div>
-          <div className="w-px h-full bg-gray-200/50 mx-[16.66%]"></div>
+          <button
+            onClick={() => setActiveTab("wordpress")}
+            className={`px-10 py-3.5 rounded-full text-base font-medium transition-all ${
+              activeTab === "wordpress"
+                ? "bg-[#3d5a80] text-white shadow-lg"
+                : "bg-white text-gray-700 hover:bg-gray-50"
+            }`}
+          >
+            WordPress Plans
+          </button>
         </div>
-      </section>
-    </>
+
+        {/* Pricing Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {currentPlans.map((plan, index) => (
+            <div
+              key={index}
+              className="rounded-3xl p-8  backdrop-blur-sm border-2 border-transparent hover:border-[#2c4a6f] flex flex-col relative transition-all duration-300  hover:-translate-y-2 group min-h-[520px] shadow-[rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px]
+"
+              style={{
+                backgroundImage:'url("/homepage/price_bg_bg.png")',
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "center",
+                backgroundBlendMode: "overlay",
+              }}
+            >
+              {/* Decorative circles */}
+              <div className="absolute top-8 right-8 w-12 h-12 rounded-full bg-gray-200/40" />
+
+              <div className="mb-6 flex-grow">
+                <h3 className="text-[#937c39] text-xl font-semibold mb-4">{plan.title}</h3>
+                <div className="text-[#2c4a6f] text-5xl font-bold mb-6">{plan.price}</div>
+                <p className="text-gray-600 text-[15px] leading-relaxed">{plan.description}</p>
+              </div>
+
+              {/* Divider line */}
+              <div className="w-full h-px bg-gray-300 mb-6" />
+
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-6 h-6 rounded-full bg-[#3d5a80] flex items-center justify-center flex-shrink-0">
+                  <Check className="w-4 h-4 text-white stroke-[3]" />
+                </div>
+                <span className="text-[#937c39] text-[15px] font-medium">{plan.feature}</span>
+              </div>
+
+              <button className="w-full py-3.5 rounded-full text-[#937c39] font-medium text-base  transition-all duration-300 flex items-center justify-center gap-2  hover:text-[#264b78] shadow-sm">
+                Read More
+                <svg
+                  className="w-4 h-4 transition-transform group-hover:translate-x-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2.5}
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   )
 }
