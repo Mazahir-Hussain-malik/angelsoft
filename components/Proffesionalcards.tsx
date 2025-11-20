@@ -29,14 +29,14 @@ const cards = [
     title: "Cost Effective",
     description:
       "Our global team allows us to provide affordable yet high-quality services.",
-    image: "/public/costEffective.png",
+    image: "/homepage/cost.png",
   },
   {
     id: "creative",
     title: "Creative Team",
     description:
       "Our designers and developers bring unique solutions that help your brand stand out.",
-    image: "/homepage/goalOriented.png",
+    image: "/homepage/creativeteam.png",
   },
   {
     id: "support",
