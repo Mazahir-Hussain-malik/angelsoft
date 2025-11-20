@@ -142,3 +142,7 @@ padding: 5px 20px;
 }
 
 
+.pricing_plan { 
+  background-image: url("/public/homepage/price_bg_bg.png");
+  background-size: 100% 100%;
+}

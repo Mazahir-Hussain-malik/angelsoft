@@ -38,7 +38,7 @@ export default function PricingPlan() {
   return (
     <>
       {/* PRICING SECTION */}
-      <section className="relative min-h-screen bg-[#f5f5f7] py-20 px-4 overflow-hidden">
+      <section className="relative  min-h-screen bg-[#f7f7f7] py-20 px-4 overflow-hidden">
 
         {/* DOT PATTERNS + SHAPES */}
         <div className="absolute top-24 left-12 w-16 h-16 grid grid-cols-6 grid-rows-6 gap-1.5 opacity-20">
@@ -60,13 +60,13 @@ export default function PricingPlan() {
           {/* HEADER */}
           <div className="text-center mb-12">
             <h2 className="text-5xl md:text-6xl font-bold mb-2">
-              <span className="text-[#b8975a]">Choose The</span>
+              <span className="text-[#937c39]">Choose The</span>
             </h2>
             <h2 className="text-5xl md:text-6xl font-bold mb-2">
               <span className="text-[#2c4a6f]">Pricing Plan</span>
             </h2>
             <h2 className="text-5xl md:text-6xl font-bold">
-              <span className="text-[#b8975a]">That Suits Your Needs</span>
+              <span className="text-[#937c39]">That Suits Your Needs</span>
             </h2>
           </div>
 
@@ -97,37 +97,50 @@ export default function PricingPlan() {
 
           {/* PRICING CARDS */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {ecommercePlans.map((plan, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-3xl p-8 flex flex-col relative transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 group"
-              >
-                <div className="mb-6">
-                  <h3 className="text-[#b8975a] text-xl font-semibold mb-4">{plan.title}</h3>
-                  <div className="text-[#2c4a6f] text-5xl font-bold mb-6">{plan.price}</div>
-                  <p className="text-gray-600 text-sm leading-relaxed">{plan.description}</p>
-                </div>
+  {ecommercePlans.map((plan, index) => (
+    <div
+      key={index}
+      className="rounded-3xl p-8 min-h-[30vh]  hover:border hover:border-[#2c4a6f] flex flex-col relative transition-all duration-300 hover:shadow-outer hover:-translate-y-2 group"
+      style={{
+        backgroundImage: 'url("/homepage/price_bg_bg.png")',
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+      
+      }}
+    >
+      <div className="mb-6">
+        <h3 className="text-[#937c39] text-xl font-semibold mb-4">{plan.title}</h3>
+        <div className="text-[#2c4a6f] text-5xl font-bold mb-6">{plan.price}</div>
+        <p className="text-gray-600 text-sm leading-relaxed">{plan.description}</p>
+      </div>
 
-                <div className="flex items-center gap-3 mb-8 mt-auto">
-                  <div className="w-6 h-6 rounded-full bg-[#3d5a80] flex items-center justify-center flex-shrink-0">
-                    <Check className="w-4 h-4 text-white" />
-                  </div>
-                  <span className="text-[#b8975a] text-sm font-medium">{plan.feature}</span>
-                </div>
+      <div className="flex items-center gap-3 mb-8 mt-auto">
+        <div className="w-6 h-6 rounded-full bg-[#3d5a80] flex items-center justify-center flex-shrink-0">
+          <Check className="w-4 h-4 text-white" />
+        </div>
+        <span className="text-[#937c39] text-sm font-medium">{plan.feature}</span>
+      </div>
 
-                <button className="w-full py-3.5 rounded-full text-[#b8975a] font-medium text-base bg-gray-50 hover:bg-gray-100 transition-colors flex items-center justify-center gap-2 group-hover:bg-[#b8975a] group-hover:text-white">
-                  Read More
-                  <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </button>
+      <button className="w-full py-3.5 rounded-full text-[#937c39] font-medium text-base bg-gray-50 hover:bg-gray-100 transition-colors flex items-center justify-center gap-2 group-hover:bg-[#937c39] group-hover:text-white">
+        Read More
+        <svg
+          className="w-4 h-4 transition-transform group-hover:translate-x-1"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
 
-                {/* floating shapes */}
-                <div className="absolute top-6 right-6 w-8 h-8 rounded-full bg-gray-100 opacity-50" />
-                <div className="absolute bottom-6 left-6 w-8 h-8 rounded-full bg-gray-100 opacity-50" />
-              </div>
-            ))}
-          </div>
+      {/* floating shapes */}
+      <div className="absolute top-6 right-6 w-8 h-8 rounded-full bg-gray-100 opacity-50" />
+      <div className="absolute bottom-6 left-6 w-8 h-8 rounded-full bg-gray-100 opacity-50" />
+    </div>
+  ))}
+</div>
+
         </div>
       </section>
 

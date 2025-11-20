@@ -25,7 +25,7 @@ const items: WhyChooseItem[] = [
 
 export function WhyChooseUs() {
   return (
-    <section className="relative w-full py-12 md:py-20 px-4 md:px-6 lg:px-16 bg-[#f5f5f5] overflow-hidden">
+    <section className="relative w-full py-12 md:py-20 px-4 md:px-6 lg:px-16 bg-[#fff] overflow-hidden">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute left-0 top-1/3 w-64 md:w-96 h-64 md:h-96 bg-gradient-to-r from-blue-50 to-transparent rounded-full blur-3xl opacity-30" />
       </div>

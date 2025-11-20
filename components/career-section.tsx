@@ -1,3 +1,7 @@
+"use client";
+import Button from "./ui/button";
+import {motion} from "framer-motion";
+
 export default function CareerSection() {
   return (
     <section className="relative bg-gradient-to-b from-gray-50 to-white py-20 overflow-hidden">
@@ -48,11 +52,26 @@ export default function CareerSection() {
           {/* Left Content */}
           <div className="space-y-6">
             {/* Career Badge */}
-            <div className="inline-block">
-              <span className="bg-white text-[#2c4a6f] px-8 py-3 rounded-full text-base font-medium shadow-sm border border-gray-200">
-                Career
-              </span>
-            </div>
+            <motion.div
+      animate={{
+        y: [0, -20, 0],
+        scaleY: [1, 1.1, 0.9, 1.05, 1],
+        scaleX: [1, 0.95, 1.05, 0.98, 1],
+      }}
+      transition={{
+        duration: 1.5,
+        times: [0, 0.4, 0.6, 0.8, 1],
+        repeat: Infinity,
+        repeatDelay: 1,
+        ease: "easeInOut",
+      }}
+    >
+      <div className=" mb-4 sm:mb-4 md:mb-5 lg:mb-6">
+        <span className=" bg-white shadow-lg text-[#264B78] sm:w-[150px] flex justify-center items-center h-[40px] text-center rounded-full text-xs sm:text-sm font-semibold tracking-wide">
+          Career
+        </span>
+      </div>
+    </motion.div>
 
             {/* Heading */}
             <div className="space-y-3">
@@ -62,7 +81,6 @@ export default function CareerSection() {
               <h3 className="text-4xl lg:text-5xl font-bold text-[#264b78] leading-tight">
                 Join Us
               </h3>
-             
             </div>
 
             {/* Description */}

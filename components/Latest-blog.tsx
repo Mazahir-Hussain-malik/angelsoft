@@ -103,7 +103,7 @@ function BlogCard({ post }: { post: BlogPost }) {
 
 export default function LatestBlog() {
   return (
-    <section className="relative bg-[#f5f5f7] py-20 px-4 overflow-hidden">
+    <section className="relative bg-[#fff] py-20 px-4 overflow-hidden">
       {/* Background Vertical Lines */}
       <div className="absolute inset-0 pointer-events-none flex justify-center">
         <div className="w-px h-full bg-gray-200/50 mx-[16.66%]"></div>

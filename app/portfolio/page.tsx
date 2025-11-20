@@ -1,9 +1,11 @@
 'use client';
 
-import { Button } from "@/components/ui/button";
 import { useState, MouseEvent } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import HeroTitle from "@/components/hero-title";
+import Button from "@/components/ui/button";
+import {PrtfollioButton , buttonVariants} from "@/components/ui/Portfollio-button";
 
 interface Bubble {
   x: number;
@@ -19,22 +21,7 @@ interface Category {
 
 export default function PortfolioPage() {
   const [activeCategory, setActiveCategory] = useState<string>("all");
-  const [bubbles, setBubbles] = useState<Bubble[]>([]);
-
-  const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
-    const newBubble: Bubble = {
-      x: e.nativeEvent.offsetX,
-      y: e.nativeEvent.offsetY,
-      id: Date.now(),
-      size: Math.random() * 20 + 10,
-    };
-    setBubbles((prev) => [...prev, newBubble]);
-
-    setTimeout(() => {
-      setBubbles((prev) => prev.filter((b) => b.id !== newBubble.id));
-    }, 2000);
-  };
-
+ 
   const categories: Category[] = [
     { id: "all", label: "All" },
     { id: "game", label: "Game Character Design" },
@@ -47,47 +34,11 @@ export default function PortfolioPage() {
   return (
     <div className="min-h-screen flex flex-col">
   
-      <div
-        className="relative min-h-[65vh] flex items-center justify-center bg-gradient-to-r from-black/70 to-black/50 overflow-hidden"
-        onMouseMove={handleMouseMove}
-      >
-   
-        <div
-          className="absolute inset-0 z-0"
-          style={{
-            backgroundImage: "url(/homepage/slide2.png)",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        />
-        <div className="absolute inset-0 bg-black/60 z-0" />
-
-        {/* Bubbles */}
-        {bubbles.map((bubble) => (
-          <motion.div
-            key={bubble.id}
-            initial={{ opacity: 1, scale: 0 }}
-            animate={{ y: -50, opacity: 0, scale: 1 }}
-            transition={{ duration: 2, ease: 'easeOut' }}
-            className="absolute rounded-full bg-white/50 pointer-events-none"
-            style={{
-              width: bubble.size,
-              height: bubble.size,
-              left: bubble.x - bubble.size / 2,
-              top: bubble.y - bubble.size / 2,
-            }}
-          />
-        ))}
-
-        <div className="relative z-10 text-center  rounded-md px-6 py-4">
-          <h1 className="text-5xl font-bold mb-6 text-[#fff]">Portfolio</h1>
-          <div className="flex items-center bg-white  py-1 rounded-full justify-center gap-2 text-sm text-[#2c4a6f]">
-            <span className="bg-white text-[#937c39] px-4 py-2 rounded-full">Home</span>
-            <span className="text-[#264b78]">/</span>
-            <span className="bg-white text-[#937c39] px-4 py-2 rounded-full">Portfolio</span>
-          </div>
-        </div>
-      </div>
+      <HeroTitle
+  title="Portfolio"
+  leftText="Home"
+  rightText="Portfolio"
+/>
 
       {/* Main Content */}
       <main className="flex-1 bg-[#f7f7f7] py-20 relative">
@@ -125,9 +76,7 @@ export default function PortfolioPage() {
         <div className="max-w-7xl mx-auto px-4">
           {/* Section Header */}
           <div className="text-center mb-12">
-            <button className="text-[#2c4a6f] bg-white shadow-xl sm:w-[200px] w-full px-8 py-3 rounded-full my-[3rem] text-sm font-semibold mb-2 animate-bounce-vertical">
-              Case Studies
-            </button>
+           <Button text="Case Studies" />
             <h2 className="text-4xl font-bold mb-2 text-[#937c39]">Specialist Business Cases</h2>
             <h3 className="text-4xl font-bold text-[#2c4a6f]">Our Projects</h3>
           </div>
@@ -135,7 +84,7 @@ export default function PortfolioPage() {
           {/* Category Filters */}
           <div className="flex flex-wrap items-center justify-center gap-4 mb-16">
             {categories.map((category) => (
-              <Button
+              <PrtfollioButton
                 key={category.id}
                 onClick={() => setActiveCategory(category.id)}
                 className={`
@@ -143,7 +92,7 @@ export default function PortfolioPage() {
                   ${activeCategory === category.id ? "bg-[#2c4a6f] text-white" : "bg-white text-[#b8975a] border border-gray-200"}
                 `}
               >
-                {/* Background slide */}
+               
                 <span
                   className={`
                     absolute inset-0 bg-[#2c4a6f] transform
@@ -160,7 +109,7 @@ export default function PortfolioPage() {
                 >
                   {category.label}
                 </span>
-              </Button>
+              </PrtfollioButton>
             ))}
           </div>
 

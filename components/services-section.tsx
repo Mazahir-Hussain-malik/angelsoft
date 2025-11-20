@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ServicesCard } from "./services-card";
 import Image from "next/image";
+import Button from "./ui/button";
 const services = [
   {
     id: 1,
@@ -40,18 +41,8 @@ export function ServicesSection() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="inline-block"
-          >
-            <div className=" animate-bounce-vertical inline-block px-6 py-2 rounded-full bg-white shadow-sm border border-gray-100 mb-8">
-              <span className="text-sm font-medium text-[#264b78]">
-                Our Services
-              </span>
-            </div>
-          </motion.div>
+         
+         <Button text="Our Services" />
 
           {/* Main heading */}
           <motion.h2
