@@ -2,18 +2,39 @@
 @custom-variant dark (&:is(.dark *));
 
 
-  .clip-logo {
+ .clip-logo {
   clip-path: polygon(0 0, 100% 0, 92% 100%, 0% 100%);
   border-radius: 0.65rem;
 }
 
+/* Tablet */
+@media (max-width: 1024px) {
+  .clip-logo {
+    clip-path: polygon(0 0, 100% 0, 96% 100%, 0% 100%);
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .clip-logo {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+}
+
+.angelsoft-bg {
+  background: transparent;
+}
 
 * { 
   font-family: "IBM Plex Sans", sans-serif;
+
 }
 
 body { 
   background-color: #f2f2f2;
+    margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 
 
@@ -144,3 +165,10 @@ padding: 5px 20px;
 
 
 
+.slick-track {
+  display: flex !important;
+}
+
+.slick-slide {
+  height: auto;
+}

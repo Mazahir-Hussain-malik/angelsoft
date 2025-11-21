@@ -4,7 +4,6 @@ import "./globals.css";
 import Header from "@/components/header";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
-import { PreloaderProvider } from "@/components/preloader-provider";
 
 const redHatDisplay = Red_Hat_Display({
   subsets: ["latin"],
@@ -26,12 +25,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${redHatDisplay.className} antialiased`}>
-        <PreloaderProvider>
         <Header />
         <Navbar />
         {children}
         <Footer />
-        </PreloaderProvider>
       </body>
     </html>
   );

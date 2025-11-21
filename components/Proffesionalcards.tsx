@@ -42,21 +42,41 @@ export default function ProfessionalCards() {
   const [hovered, setHovered] = useState<string | null>(null)
 
   const settings = {
-    dots: false,
-    arrows: false,
-    infinite: true,
-    speed: 800,
-    autoplay: true,
-    autoplaySpeed: 1800,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    rtl: true,
-    cssEase: "ease-in-out",
-    pauseOnHover: false,
-  }
+  dots: false,
+  arrows: false,
+  infinite: true,
+  speed: 800,
+  autoplay: true,
+  autoplaySpeed: 1800,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  rtl: true,
+  cssEase: "ease-in-out",
+  pauseOnHover: false,
+  adaptiveHeight: true,
+
+  responsive: [
+    {
+      breakpoint: 1024, // Tablet and below
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        infinite: true,
+      },
+    },
+    {
+      breakpoint: 640, // Mobile and below
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true,
+      },
+    },
+  ],
+}
 
   return (
-    <div className="w-full py-16 mt-[-10rem] relative bg-transparent z-40">
+    <div className="w-full py-16 md:mt-[-10rem] mt-[-9rem] relative bg-transparent z-40">
       <div className="max-w-6xl mx-auto px-6">
         <Slider {...settings}>
           {cards.map((card) => (
@@ -174,15 +194,25 @@ export default function ProfessionalCards() {
         </Slider>
       </div>
 
-      {/* FIX SPACING — SLICK OVERRIDE */}
+     
       <style jsx global>{`
-        .slick-slide > div {
-          margin: 0 10px !important;
-        }
-        .slick-list {
-          margin: 0 -10px !important;
-        }
-      `}</style>
+  .slick-slide > div {
+    margin: 0 10px !important;
+  }
+
+  .slick-list {
+    margin: 0 -10px !important;
+  }
+
+  .slick-track {
+    display: flex !important;
+  }
+
+  .slick-slide {
+    height: auto;
+  }
+`}</style>
+
     </div>
   )
 }

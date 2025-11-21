@@ -9,24 +9,23 @@ import { IoMail } from "react-icons/io5";
 import { MdHeadphones } from "react-icons/md";
 import React, { ReactNode } from "react";
 
-
 interface IconWrapperProps {
-  children: ReactNode; 
+  children: ReactNode;
   to?: string;
 }
 
-// Reusable Icon Wrapper (same hover effects everywhere)
-function IconWrapper({ children, to = "#" } : IconWrapperProps) {
+// Reusable Icon Wrapper
+function IconWrapper({ children, to = "#" }: IconWrapperProps) {
   return (
     <div
-      className="group w-[30px] h-[30px] rounded-full flex justify-center items-center
+      className="group md:w-[30px] md:h-[30px] w-[20px] h-[20px]  rounded-full flex justify-center items-center
       bg-white/10 hover:bg-white transition-all duration-300 ease-out
       hover:shadow-[0px_0px_8px_rgba(255,255,255,0.6)] hover:scale-[1.15]
       cursor-pointer"
     >
       <a
         href={to}
-        className="text-[14px] text-white group-hover:text-[#264b78]
+        className="md:text-[14px] sm:text-[12px] text-[10px] text-white group-hover:text-[#264b78]
         transition-all duration-300 ease-out group-hover:scale-[1.20]"
       >
         {children}
@@ -45,8 +44,8 @@ const social_icons = [
 
 export default function Header() {
   return (
-    <div className="text-white py-2 px-6 absolute  top-0 w-full z-50">
-      <div className="max-w-7xl mx-auto flex items-center justify-between text-xs">
+    <div className="text-white py-2 px-6 absolute top-0 w-full z-50">
+      <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-0 sm:text-xs text-[10px]">
 
         {/* Left Section - Social Icons */}
         <div className="flex items-center gap-4">
@@ -54,30 +53,32 @@ export default function Header() {
 
           <div className="flex gap-[0.5rem]">
             {social_icons.map(({ id, icon, to }) => (
-              <IconWrapper key={id} to={to}>{icon}</IconWrapper>
+              <IconWrapper key={id} to={to}>
+                {icon}
+              </IconWrapper>
             ))}
           </div>
         </div>
 
         {/* Right Section - Contact */}
-        <div className="flex items-center gap-8">
+        <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-8">
 
           {/* Email */}
-          <div className="flex items-center gap-1.5">
+          <div className="sm:flex  hidden items-center md:gap-1.5">
             <IconWrapper>
-              <IoMail className=" text-[#264b78] "  />
+              <IoMail className="text-[#264b78]" />
             </IconWrapper>
-            <span className="whitespace-nowrap text-white/90">
+            <span className="whitespace-nowrap sm:block hidden text-white/90">
               Email: contact@angelsoft.io
             </span>
           </div>
 
           {/* Phone */}
-          <div className="flex items-center gap-1.5">
+          <div className="sm:flex items-center gap-1.5  hidden">
             <IconWrapper>
-              <MdHeadphones className=" text-[#264b78] " />
+              <MdHeadphones className="text-[#264b78]" />
             </IconWrapper>
-            <span className="whitespace-nowrap text-white/90">
+            <span className="whitespace-nowrap sm:block hidden text-white/90">
               Call: +1 646 752 4410
             </span>
           </div>

@@ -18,7 +18,7 @@ export function ServicesCard({ service, index }: ServicesCardProps) {
 
   // Background images for each service - will show on hover with dark overlay
   const backgroundImages: Record<number, string> = {
-    1: 'linear-gradient(rgba(0 ,0 ,0 ,0.3) , rgba(0 ,0 ,0 ,0.3)),url("/homepage/costEffective.png")',
+    1: 'linear-gradient(rgba(0 ,0 ,0 ,0.3) , rgba(0 ,0 ,0 ,0.3)),url("/homepage/cost.png")',
     2: 'linear-gradient(rgba(0 ,0 ,0 ,0.3) , rgba(0 ,0 ,0 ,0.3)),url("/homepage/goalOriented.png")',
     3: 'linear-gradient(rgba(0 ,0 ,0 ,0.3) , rgba(0 ,0 ,0 ,0.3)),url("/homepage/qualitydriven.png")',
     4: 'linear-gradient(rgba(0 ,0 ,0 ,0.3) , rgba(0 ,0 ,0 ,0.3)),url("/homepage/strongsygenry.png")',

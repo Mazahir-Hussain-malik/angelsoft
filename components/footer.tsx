@@ -63,7 +63,7 @@ const Footer = () => {
         </div>
       )}
       <div className="absolute top-1/2 right-[10%] w-[300px] h-[300px] rounded-full border border-slate-700/30 z-0" />
-      <div className="absolute bottom-[20%] left-[5%] w-[400px] h-[400px] rounded-full border border-slate-700/30 z-0" />
+      <div className="absolute bottom-[20%] left-[5%] md:w-[400px]  md:h-[400px] sm:w-[200px] sm:h-[200px] w-[100px] h-[100px] rounded-full border border-slate-700/30 z-0" />
       {/* Footer Content */}
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-16 pt-24 z-10">
         <motion.div
