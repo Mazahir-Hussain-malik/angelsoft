@@ -11,7 +11,7 @@ export function Preloader({ onClose }: PreloaderProps) {
   const text = "ANGELSOFTSOLUTIONS"
   const letters = text.split("")
 
-  const strokeIndices = [4, 5, 6, 7, 8] // L, S, O, F, T
+  const strokeIndices = [4, 5, 6, 7, 8] 
 
   return (
     <motion.div

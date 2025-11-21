@@ -14,33 +14,28 @@ const cards = [
     id: "goal",
     title: "Goal Oriented",
     description:
-      "We work closely with clients to track business objectives and ensure everything leads to a clear ROI.",
+      "We work closely with our clients to identify and keep track of their business objectives to ensure that everything is working towards the path to a clear ROI.",
     image: "/homepage/goalOriented.png",
   },
   {
     id: "synergy",
     title: "Strong Synergy",
-    description: "We stay connected through transparent communication channels across all time zones.",
+    description: "We remain in contact with clients through channels that allow performance, transparency and accuracy, feasible with all time zones across the globe.",
     image: "/homepage/strongsygenry.png",
   },
   {
     id: "cost",
     title: "Cost Effective",
-    description: "Our global team allows us to provide affordable yet high-quality services.",
+    description: "We have experts based in countries where the cost of living is cheaper, and thus we are able to provide more affordable services than most of our competitors.",
     image: "/homepage/cost.png",
   },
   {
     id: "creative",
-    title: "Creative Team",
-    description: "Our designers and developers bring unique solutions that help your brand stand out.",
+    title: "Quality Driven",
+    description: "We utilize quality control checklists and reguarly communicate with you throughout the development process to ensure that your project flows smoothly and efficiently.",
     image: "/homepage/creativeteam.png",
   },
-  {
-    id: "support",
-    title: "24/7 Support",
-    description: "We are always available to assist clients with friendly and reliable support.",
-    image: "/homepage/strongsygenry.png",
-  },
+ 
 ]
 
 export default function ProfessionalCards() {

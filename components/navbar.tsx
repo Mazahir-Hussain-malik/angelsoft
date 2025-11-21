@@ -4,13 +4,13 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { usePathname } from 'next/navigation';
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-   const pathname = usePathname(); 
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -60,7 +60,6 @@ export default function Navbar() {
             <div className="hidden bg-white py-[18px] border-b-2 border-[#264b78] lg:flex items-center justify-center flex-1 px-4">
               <div className="bg-white px-8 rounded-2xl flex items-center gap-8">
                 {navItems.map((item, idx) => {
-                
                   return (
                     <Link
                       key={item.label}
@@ -102,9 +101,11 @@ export default function Navbar() {
                 </svg>
               </button>
 
-              <button className="px-6 py-2.5 bg-[#264b78] text-white rounded-full font-semibold text-sm shadow-md hover:bg-[#1e3b63] transition-colors">
-                Get In Touch
-              </button>
+              <Link href={"/contact"}>
+                <button className="px-6 py-2.5 bg-[#264b78] text-white rounded-full font-semibold text-sm shadow-md hover:bg-[#1e3b63] transition-colors">
+                  Get In Touch
+                </button>
+              </Link>
             </div>
 
             {/* Mobile menu toggle */}
@@ -155,9 +156,11 @@ export default function Navbar() {
                     </Link>
                   ))}
                   <div className="pt-2">
-                    <button className="w-full px-4 py-2 bg-[#264b78] text-white rounded-full font-semibold text-sm hover:bg-[#1e3b63] transition-colors">
-                      Get In Touch
-                    </button>
+                    <Link href={"contact"}>
+                      <button className="w-full px-4 py-2 bg-[#264b78] text-white rounded-full font-semibold text-sm hover:bg-[#1e3b63] transition-colors">
+                        Get In Touch
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>

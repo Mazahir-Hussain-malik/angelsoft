@@ -1,57 +1,55 @@
-import Image from "next/image";
+"use client"
+import Image from "next/image"
+import { motion } from "framer-motion"
 
 interface ServiceCardProps {
-  image: string;
-  title: string;
-  description: string;
+  image: string
+  title: string
+  description: string
+  index?: number
 }
 
-const ServiceCard: React.FC<ServiceCardProps> = ({ image, title, description }) => {
+const ServiceCard = ({ image, title, description, index = 0 }: ServiceCardProps) => {
   return (
-    <div className="group bg-white rounded-lg p-6 sm:p-7 md:p-8 shadow-sm hover:shadow-lg  transition-all duration-300 h-full flex flex-col relative overflow-hidden">
-      {/* Default State Content */}
-      <div className="relative z-0 flex flex-col h-full rounded-lg p-6 sm:p-7 md:p-8">
-        <div className="mb-4 w-16 h-16 sm:w-20 sm:h-20 relative">
+    <motion.div
+      initial={{ opacity: 0, y: 60 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{
+        duration: 0.6,
+        delay: index * 0.15,
+        ease: [0.25, 0.1, 0.25, 1],
+      }}
+      viewport={{ once: true, amount: 0.3 }}
+      className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden hover:-translate-y-2"
+    >
+      <div className="absolute inset-0 bg-[#4b4b4b] rounded-2xl scale-0 group-hover:scale-100 transition-transform duration-500 origin-center -z-0"></div>
+
+      {/* Content wrapper with relative positioning */}
+      <div className="relative z-10">
+        {/* Icon Container */}
+        <div className="w-20 h-20 rounded-full bg-[#e8f0ff] flex items-center justify-center mb-6 group-hover:bg-white/10 transition-colors duration-500">
+          <div className="relative w-10 h-10">
             <Image
-              src={image}
+              src={image || "/placeholder.svg"}
               alt={title}
               fill
-              className="object-contain"
+              className="object-contain transition-all duration-500"
             />
           </div>
+        </div>
 
-        <h3 className="text-base sm:text-lg font-bold text-[#937C39] mb-2 sm:mb-3 leading-tight">
+        {/* Title */}
+        <h3 className="text-xl font-bold text-[#b8975a] mb-4 group-hover:text-white transition-colors duration-500">
           {title}
         </h3>
 
-        <p className="text-gray-600 text-xs sm:text-sm leading-relaxed flex-grow">
+        {/* Description */}
+        <p className="text-[#666666] text-[15px] leading-relaxed group-hover:text-gray-200 transition-colors duration-500">
           {description}
         </p>
       </div>
+    </motion.div>
+  )
+}
 
-      {/* Hover Overlay */}
-      <div className="absolute inset-0 bg-gray-700 opacity-0 group-hover:opacity-95 transition-opacity duration-300 rounded-lg z-10 flex flex-col justify-center items-start p-6 sm:p-7 md:p-8 pointer-events-none group-hover:pointer-events-auto">
-        <div className="hover:border-white border border-dashed border-transparent rounded-lg p-4 w-full h-full flex flex-col justify-center items-start">
-          <div className="mb-4 w-16 h-16 sm:w-20 sm:h-20 relative">
-            <Image
-              src={image}
-              alt={title}
-              fill
-              className="object-contain brightness-0 invert opacity-70"
-            />
-          </div>
-
-          <h3 className="text-lg font-bold text-white mb-3 sm:mb-4">
-            {title}
-          </h3>
-
-          <p className="text-white text-sm leading-relaxed opacity-90">
-            {description}
-          </p>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default ServiceCard;
+export default ServiceCard

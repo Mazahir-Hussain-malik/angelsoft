@@ -31,7 +31,7 @@ export default function Home() {
         </svg>
       </div>
 
-      {/* Content */}
+  
       <div className="relative z-10">
         <ServicesSection />
       </div>

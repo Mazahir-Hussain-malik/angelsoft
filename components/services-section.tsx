@@ -61,9 +61,7 @@ export function ServicesSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg text-[#6b7280] max-w-3xl mx-auto leading-relaxed"
           >
-            Angelsoft Solutions offers a wide range of IT services from UI/UX
-            design, web and mobile applications development, staff augmentation,
-            back-office support, and cloud hosting/deployment services.
+         Angelsoft Solutions offers a wide range of IT services from UI/UX design, web and mobile applications development, staff augmentation, back-office support, and cloud hosting/deployment services.
           </motion.p>
         </div>
 
