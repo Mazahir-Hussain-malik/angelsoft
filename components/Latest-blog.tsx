@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { Calendar, User, Folder, ArrowUp } from "lucide-react"
 import { useState, useEffect } from "react"
+import { HiUserCircle } from "react-icons/hi2";
 
 interface BlogPost {
   date: string
@@ -64,15 +65,15 @@ function BlogCard({ post, index }: { post: BlogPost; index: number }) {
             <span className="text-sm font-medium">{post.date}</span>
           </div>
 
-          <h4 className="text-[#b8975a] text-2xl font-bold mb-4 leading-tight">{post.title}</h4>
+          <h4 className="text-[#937C39] text-2xl font-extrabold mb-4 leading-tight">{post.title}</h4>
 
           <p className="text-gray-500 text-base leading-relaxed mb-8 flex-grow">{post.description}</p>
 
           <div className="flex items-center gap-3 mt-auto">
-            <div className="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center overflow-hidden shrink-0">
-              <User className="w-7 h-7 text-gray-400 translate-y-1" />
+            <div className="w-12 h-12 rounded-full  flex items-center justify-center overflow-hidden shrink-0">
+              <HiUserCircle className="w-12 h-12 text-[#666666]/40 translate-y-1" />
             </div>
-            <span className="text-[#b8975a] font-bold text-base">{post.author}</span>
+            <span className="text-[#937C39] font-extrabold text-base">{post.author}</span>
           </div>
         </div>
 
@@ -89,7 +90,7 @@ function BlogCard({ post, index }: { post: BlogPost; index: number }) {
             <span className="text-sm font-medium text-white">Business , Finance</span>
           </div>
 
-          <h4 className="text-white text-2xl font-bold mb-4 leading-tight underline decoration-2 underline-offset-4 decoration-white/30">
+          <h4 className="text-white text-2xl font-extrabold mb-4 leading-tight underline decoration-2 underline-offset-4 decoration-white/30">
             {post.title}
           </h4>
 
@@ -159,8 +160,8 @@ export default function LatestBlog() {
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
-          <h2 className="text-[#b8975a] text-5xl md:text-6xl font-bold mb-3 tracking-tight">Read Our Latest</h2>
-          <h3 className="text-[#2c4a6f] text-5xl md:text-6xl font-bold tracking-tight">Blog Posts</h3>
+          <h2 className="text-[#937C39] text-3xl font-extrabold  md:text-[44.5px]  mb-3 tracking-tight">Read Our Latest</h2>
+          <h3 className="text-[#2c4a6f] text-3xl md:text-[44.5px] font-extrabold tracking-tight">Blog Posts</h3>
         </motion.div>
 
         {/* Blog Cards */}

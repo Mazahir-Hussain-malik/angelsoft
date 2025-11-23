@@ -1,13 +1,17 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Slider from "react-slick"
-import Image from "next/image"
-import { motion } from "framer-motion"
-import { ArrowRight } from "lucide-react"
+import { useState } from "react";
+import Slider from "react-slick";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 
-import "slick-carousel/slick/slick.css"
-import "slick-carousel/slick/slick-theme.css"
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { FaSackDollar } from "react-icons/fa6";
+import { FaListCheck } from "react-icons/fa6";
+import { FaBullseye } from "react-icons/fa";
+import { FaEarListen } from "react-icons/fa6";
 
 const cards = [
   {
@@ -16,64 +20,70 @@ const cards = [
     description:
       "We work closely with our clients to identify and keep track of their business objectives to ensure that everything is working towards the path to a clear ROI.",
     image: "/homepage/goalOriented.png",
+    icon: <FaBullseye />,
   },
   {
     id: "synergy",
     title: "Strong Synergy",
-    description: "We remain in contact with clients through channels that allow performance, transparency and accuracy, feasible with all time zones across the globe.",
+    description:
+      "We remain in contact with clients through channels that allow performance, transparency and accuracy, feasible with all time zones across the globe.",
     image: "/homepage/strongsygenry.png",
+    icon: <FaEarListen />,
   },
   {
     id: "cost",
     title: "Cost Effective",
-    description: "We have experts based in countries where the cost of living is cheaper, and thus we are able to provide more affordable services than most of our competitors.",
+    description:
+      "We have experts based in countries where the cost of living is cheaper, and thus we are able to provide more affordable services than most of our competitors.",
     image: "/homepage/cost.png",
+    icon: <FaSackDollar />,
   },
   {
     id: "creative",
     title: "Quality Driven",
-    description: "We utilize quality control checklists and reguarly communicate with you throughout the development process to ensure that your project flows smoothly and efficiently.",
+    description:
+      "We utilize quality control checklists and reguarly communicate with you throughout the development process to ensure that your project flows smoothly and efficiently.",
     image: "/homepage/creativeteam.png",
+    icon: <FaListCheck />,
   },
- 
-]
+];
 
 export default function ProfessionalCards() {
-  const [hovered, setHovered] = useState<string | null>(null)
+  const [hovered, setHovered] = useState<string | null>(null);
 
   const settings = {
-  dots: false,
-  arrows: false,
-  infinite: true,
-  speed: 800,
-  autoplay: true,
-  autoplaySpeed: 1800,
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  rtl: true,
-  cssEase: "ease-in-out",
-  pauseOnHover: false,
-  adaptiveHeight: true,
+    dots: false,
+    arrows: false,
+    infinite: true,
+    speed: 800,
+    autoplay: true,
+    autoplaySpeed: 1800,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    rtl: true,
+    cssEase: "ease-in-out",
+    pauseOnHover: false,
+    adaptiveHeight: true,
 
-  responsive: [
-    {
-      breakpoint: 1024, // Tablet and below
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 1,
-        infinite: true,
+    responsive: [
+      {
+        breakpoint: 950, // Tablet and below
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+        },
       },
-    },
-    {
-      breakpoint: 640, // Mobile and below
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        infinite: true,
+      {
+        breakpoint: 640, // Mobile and below
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+        },
       },
-    },
-  ],
-}
+    ],
+  };
 
   return (
     <div className="w-full py-16 md:mt-[-10rem] mt-[-9rem] relative bg-transparent z-40">
@@ -98,7 +108,7 @@ export default function ProfessionalCards() {
                 <div className="absolute bottom-0 left-0 right-0 h-[45%] bg-gradient-to-t from-[#264b78] to-transparent" />
 
                 <motion.div
-                  className="absolute left-5 bottom-[50px] bg-white w-[300px] shadow-xl h-[60px] rounded-lg flex items-center justify-center z-50"
+                  className="absolute left-1/2 -translate-x-1/2 bottom-[50px] bg-white w-[300px] shadow-xl h-[60px] rounded-lg flex items-center justify-center z-50 overflow-hidden"
                   initial={{ opacity: 1, scale: 1, y: 0 }}
                   animate={{
                     opacity: hovered === card.id ? 0 : 1,
@@ -110,11 +120,16 @@ export default function ProfessionalCards() {
                     ease: [0.4, 0, 0.2, 1],
                   }}
                 >
-                  <p className="text-[#937c39] text-xl font-semibold">{card.title}</p>
+                  <p className="text-[#937c39] text-xl font-semibold">
+                    {card.title}
+                  </p>
+                  <div className="text-4xl absolute right-5 -bottom-1 text-[#264b78]/20">
+                    {card.icon}
+                  </div>
                 </motion.div>
 
                 <motion.div
-                  className="absolute inset-3 m-4 bg-[#264b78]/95 backdrop-blur-sm px-6 py-6 rounded-2xl text-white flex flex-col justify-center items-center text-center z-30"
+                  className="absolute inset-3 mx-4 bg-[#264b78]/95 backdrop-blur-sm px-6 py-6 rounded-2xl text-white flex flex-col justify-center items-center text-center z-30"
                   initial={{ y: "100%", opacity: 0 }}
                   animate={{
                     y: hovered === card.id ? 0 : "100%",
@@ -125,8 +140,11 @@ export default function ProfessionalCards() {
                     ease: [0.4, 0, 0.2, 1],
                   }}
                 >
+                  <div className=" text-4xl    text-[#264b78] bg-white/30 p-4 rounded-full text-left absolute top-8 right-8 ">
+                    {card.icon}
+                  </div>
                   <motion.h3
-                    className="text-xl font-bold mb-3 tracking-wide"
+                    className="text-xl font-extrabold mb-3 tracking-wide"
                     initial={{ y: 20, opacity: 0 }}
                     animate={{
                       y: hovered === card.id ? 0 : 20,
@@ -183,7 +201,14 @@ export default function ProfessionalCards() {
                       transition={{ duration: 0.6 }}
                     />
 
-                    <motion.div whileHover={{ x: 3 }} transition={{ type: "spring", stiffness: 300, damping: 20 }}>
+                    <motion.div
+                      whileHover={{ x: 3 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 300,
+                        damping: 20,
+                      }}
+                    >
                       <ArrowRight className="w-5 h-5 text-white relative z-10" />
                     </motion.div>
                   </motion.button>
@@ -194,25 +219,23 @@ export default function ProfessionalCards() {
         </Slider>
       </div>
 
-     
       <style jsx global>{`
-  .slick-slide > div {
-    margin: 0 10px !important;
-  }
+        .slick-slide > div {
+          margin: 0 10px !important;
+        }
 
-  .slick-list {
-    margin: 0 -10px !important;
-  }
+        .slick-list {
+          margin: 0 -10px !important;
+        }
 
-  .slick-track {
-    display: flex !important;
-  }
+        .slick-track {
+          display: flex !important;
+        }
 
-  .slick-slide {
-    height: auto;
-  }
-`}</style>
-
+        .slick-slide {
+          height: auto;
+        }
+      `}</style>
     </div>
-  )
+  );
 }

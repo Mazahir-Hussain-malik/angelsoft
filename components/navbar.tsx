@@ -44,7 +44,7 @@ export default function Navbar() {
       >
         <div className="max-w-7xl angelsoft-bg mx-auto relative md:px-0 px-4">
           <div
-            className="flex items-center justify-between gap-0 rounded-2xl sm:shadow-[0_6px_24px_rgba(0,0,0,0.18)] overflow-hidden"
+            className="flex items-center justify-between gap-0 rounded-2xl  overflow-hidden"
             style={{ padding: "0px", alignItems: "center" }}
           >
             <div className="relative md:mr-[-1.5rem] mr-0">
@@ -63,8 +63,8 @@ export default function Navbar() {
             </div>
 
             {/* Desktop Nav Items */}
-            <div className="hidden  bg-white py-[18px] border-b-2 border-[#264b78] lg:flex items-center justify-center flex-1 px-4">
-              <div className="bg-white px-8 rounded-2xl flex items-center gap-8">
+            <div className="hidden  bg-white py-[18px] border-b-4 border-[#264b78] lg:flex items-center justify-start  flex-1 px-12">
+              <div className="bg-white px-2 rounded-2xl flex items-center gap-3">
                 {navItems.map((item, idx) => {
                   return (
                     <Link
@@ -73,8 +73,8 @@ export default function Navbar() {
                       className={
                         (pathname == item.href
                           ? "px-4 py-2 rounded-md bg-[#264b78]/10 text-[#264b78] font-semibold"
-                          : "text-[#937c39] px-4 py-2 rounded-md hover:bg-[#264b78]/15 hover:text-[#264b78] transition-colors duration-200") +
-                        " text-sm"
+                          : "text-[#937c39] font-semibold px-4 py-2 rounded-md hover:bg-[#264b78]/15 hover:text-[#264b78] transition-colors duration-200") +
+                        " text-[16px]"
                       }
                     >
                       {item.label}
@@ -84,14 +84,14 @@ export default function Navbar() {
               </div>
             </div>
 
-            <div className="hidden bg-white py-4 border-b-2 border-[#264b78] lg:flex items-center gap-4 flex-shrink-0 pr-[1rem] relative ">
+            <div className="hidden bg-white py-[18px] border-b-4 border-[#264b78] lg:flex items-center gap-4 flex-shrink-0 pr-[1rem] relative ">
               {/* Search Button */}
               <button
                 onClick={() => setIsSearchOpen(!isSearchOpen)}
-                className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm border border-transparent hover:border-[#e6eef8] transition-all z-50"
+                className="w-10 h-10 rounded-full bg-white flex items-center justify-center  border border-transparent hover:border-[#e6eef8] transition-all z-50"
                 aria-label="Search"
               >
-                <svg className="w-5 h-5 text-[#1a1a1a]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 text-[#8B6E3C] hover:text-[#000]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"

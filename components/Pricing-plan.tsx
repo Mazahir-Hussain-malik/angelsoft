@@ -1,10 +1,10 @@
-"use client"
-
-import { useState } from "react"
-import { Check } from "lucide-react"
+"use client";
+import { motion } from "framer-motion";
+import { useState } from "react";
+import { Check } from "lucide-react";
 
 export default function PricingPlan() {
-  const [activeTab, setActiveTab] = useState("ecommerce")
+  const [activeTab, setActiveTab] = useState("ecommerce");
 
   const ecommercePlans = [
     {
@@ -28,7 +28,7 @@ export default function PricingPlan() {
         "Get a WordPress website that allows you to sell products online. The plan comes with a free web hosting, free domain registration, and free maintenance for up to 3 months.",
       feature: "Free Domain & Web Hosting",
     },
-  ]
+  ];
 
   const wordpressPlans = [
     {
@@ -52,22 +52,40 @@ export default function PricingPlan() {
         "Get a WordPress website with up to 30 static pages. The plan comes with a free web hosting, free domain registration, and free maintenance for up to 24 months. Within the next 24 months after launching your site, we will update your existing pages for free.",
       feature: "Free Domain & Web Hosting",
     },
-  ]
+  ];
 
-  const currentPlans = activeTab === "ecommerce" ? ecommercePlans : wordpressPlans
+  const currentPlans =
+    activeTab === "ecommerce" ? ecommercePlans : wordpressPlans;
 
   return (
     <section className="relative min-h-screen bg-[#f7f7f7] py-20 px-4 overflow-hidden">
       {/* Decorative Elements */}
-      <div className="absolute top-24 left-12 w-20 h-20 grid grid-cols-6 grid-rows-6 gap-2 opacity-20">
+      <motion.div
+        className="absolute  hidden top-24 left-12 w-20 h-20 sm:grid grid-cols-6 grid-rows-6 gap-2 opacity-20"
+        animate={{ y: [0, -10, 0] }} 
+        transition={{
+          duration: 1, 
+          repeat: Infinity, 
+          ease: "easeInOut", 
+          repeatType: "loop",
+        }}
+      >
         {Array.from({ length: 36 }).map((_, i) => (
           <div key={i} className="w-1.5 h-1.5 rounded-full bg-gray-400" />
         ))}
-      </div>
+      </motion.div>
 
-      <div className="absolute top-20 right-32 w-48 h-48 rounded-full bg-gray-300/20" />
+      <motion.div
+        className="absolute sm:block hidden top-20 right-32 w-48 h-48 rounded-full bg-[#666666]/10"
+        animate={{ y: [0, -20, 0] }}
+        transition={{
+          duration: 2,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
 
-      <div className="absolute bottom-32 right-20 w-36 h-36 grid grid-cols-8 grid-rows-8 gap-2 opacity-20">
+      <div className="absolute bottom-32 right-20 w-36 h-36 grid grid-cols-8 grid-rows-8 gap-2 opacity-20 animate-pulse">
         {Array.from({ length: 64 }).map((_, i) => (
           <div key={i} className="w-1.5 h-1.5 rounded-full bg-gray-400" />
         ))}
@@ -76,22 +94,22 @@ export default function PricingPlan() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl font-bold mb-2">
+          <h2 className="text-3xl md:text-[44.5px] font-extrabold mb-2">
             <span className="text-[#937c39]">Choose The</span>
           </h2>
-          <h2 className="text-5xl md:text-6xl font-bold mb-2">
+          <h2 className="text-3xl md:text-[44.5px] font-extrabold mb-2">
             <span className="text-[#2c4a6f]">Pricing Plan</span>
           </h2>
-          <h2 className="text-5xl md:text-6xl font-bold">
+          <h2 className="text-3xl md:text-[44.5px] font-extrabold">
             <span className="text-[#937c39]">That Suits Your Needs</span>
           </h2>
         </div>
 
         {/* Tabs */}
-        <div className="flex justify-center gap-4 mb-16">
+        <div className="flex justify-center gap-4 mb-16 sm:flex-row flex-col">
           <button
             onClick={() => setActiveTab("ecommerce")}
-            className={`px-10 py-3.5 rounded-full text-base font-medium transition-all ${
+            className={`px-10 py-3.5 rounded-full text-base  font-medium transition-all ${
               activeTab === "ecommerce"
                 ? "bg-[#3d5a80] text-white shadow-lg"
                 : "bg-white text-gray-700 hover:bg-gray-50"
@@ -102,7 +120,7 @@ export default function PricingPlan() {
 
           <button
             onClick={() => setActiveTab("wordpress")}
-            className={`px-10 py-3.5 rounded-full text-base font-medium transition-all ${
+            className={`px-10  py-3.5 rounded-full sm:text-base  font-medium transition-all ${
               activeTab === "wordpress"
                 ? "bg-[#3d5a80] text-white shadow-lg"
                 : "bg-white text-gray-700 hover:bg-gray-50"
@@ -117,23 +135,30 @@ export default function PricingPlan() {
           {currentPlans.map((plan, index) => (
             <div
               key={index}
-              className="rounded-3xl p-8  backdrop-blur-sm border-2 border-transparent hover:border-[#2c4a6f] flex flex-col relative transition-all duration-300  hover:-translate-y-2 group min-h-[520px] shadow-[rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px]
+              className="rounded-3xl p-8  backdrop-blur-sm border-2 border-transparent hover:border-[#2c4a6f] flex flex-col relative transition-all duration-300  hover:-translate-y-2 group min-h-[520px]  
 "
               style={{
-                backgroundImage:'url("/homepage/price_bg_bg.png")',
+                backgroundImage: 'url("/homepage/price_bg_bg.png")',
                 backgroundSize: "cover",
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "center",
                 backgroundBlendMode: "overlay",
+                boxShadow : "0 1.7rem 3.9rem 0 rgba(6, 33, 101, 0.15)"
               }}
             >
               {/* Decorative circles */}
               <div className="absolute top-8 right-8 w-12 h-12 rounded-full bg-gray-200/40" />
 
               <div className="mb-6 flex-grow">
-                <h3 className="text-[#937c39] text-xl font-semibold mb-4">{plan.title}</h3>
-                <div className="text-[#2c4a6f] text-5xl font-bold mb-6">{plan.price}</div>
-                <p className="text-gray-600 text-[15px] leading-relaxed">{plan.description}</p>
+                <h3 className="text-[#937c39] text-xl font-semibold mb-4">
+                  {plan.title}
+                </h3>
+                <div className="text-[#2c4a6f] text-5xl font-extrabold mb-6">
+                  {plan.price}
+                </div>
+                <p className="text-gray-600 text-[15px] leading-relaxed">
+                  {plan.description}
+                </p>
               </div>
 
               {/* Divider line */}
@@ -143,7 +168,9 @@ export default function PricingPlan() {
                 <div className="w-6 h-6 rounded-full bg-[#3d5a80] flex items-center justify-center flex-shrink-0">
                   <Check className="w-4 h-4 text-white stroke-[3]" />
                 </div>
-                <span className="text-[#937c39] text-[15px] font-medium">{plan.feature}</span>
+                <span className="text-[#937c39] text-[15px] font-medium">
+                  {plan.feature}
+                </span>
               </div>
 
               <button className="w-full py-3.5 rounded-full text-[#937c39] font-medium text-base  transition-all duration-300 flex items-center justify-center gap-2  hover:text-[#264b78] shadow-sm">
@@ -155,7 +182,11 @@ export default function PricingPlan() {
                   stroke="currentColor"
                   strokeWidth={2.5}
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M9 5l7 7-7 7"
+                  />
                 </svg>
               </button>
             </div>
@@ -163,5 +194,5 @@ export default function PricingPlan() {
         </div>
       </div>
     </section>
-  )
+  );
 }

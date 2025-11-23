@@ -4,6 +4,9 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
+
+
+
 interface Slide {
   image: string;
   welcomeLabel: string;
@@ -82,9 +85,8 @@ export default function HeroSlider() {
   };
 
   return (
-    <section className="relative w-full min-h-[calc(100vh-80px)] sm:min-h-[calc(120vh-80px)] overflow-hidden">
+    <section className="relative w-full min-h-[calc(100vh-80px)] sm:min-h-[calc(140vh-80px)] overflow-hidden">
       
-      {/* ===== BACKGROUND ANIMATION (FIXED) ===== */}
       <AnimatePresence mode="sync">
         <motion.div
           key={`bg-${currentSlide}`}
@@ -124,8 +126,7 @@ export default function HeroSlider() {
         </motion.div>
       </AnimatePresence>
 
-      {/* ===== CONTENT LAYER (LOCKED & STABLE) ===== */}
-      <div className="relative z-20 isolate container mx-auto px-6 md:px-12 lg:px-24 h-full min-h-[calc(100vh-80px)] flex items-center py-20 md:mt-0 mt-[2rem]">
+      <div className="relative z-20 isolate container mx-auto px-6 md:px-12 lg:px-24 h-full min-h-[calc(140vh-80px)] flex items-center py-20 md:mt-0 mt-[2rem]">
         <AnimatePresence mode="wait">
           <motion.div
             key={`content-${currentSlide}`}

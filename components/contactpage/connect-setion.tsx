@@ -49,17 +49,17 @@ export default function ContactSection() {
   ];
 
   return (
-    <section className="py-20 bg-white relative min-h-screen flex flex-col justify-center">
+    <section className="py-20 bg-[#ececec] relative min-h-screen flex flex-col justify-center">
       <div className="container mx-auto px-4">
         {/* Header Section */}
         <div className="text-center mb-16 space-y-4">
           <Button text="Get In Touch" />
 
-          <h2 className="text-4xl md:text-5xl font-bold text-[#b8975a]">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-[#b8975a]">
             Have a Project in Mind?
           </h2>
 
-          <h3 className="text-4xl md:text-5xl font-bold text-[#2c4a6f]">
+          <h3 className="text-4xl md:text-5xl font-extrabold text-[#2c4a6f]">
             Let&apos;s Connect
           </h3>
         </div>
@@ -85,7 +85,7 @@ export default function ContactSection() {
                 </div>
               </div>
 
-              <h4 className="text-2xl font-bold text-[#b8975a] mb-4">
+              <h4 className="text-2xl font-extrabold text-[#b8975a] mb-4">
                 {card.title}
               </h4>
 

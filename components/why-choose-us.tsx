@@ -1,27 +1,30 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import Image from 'next/image'
+import { motion } from "framer-motion";
+import Image from "next/image";
 
 interface WhyChooseItem {
-  title: string
-  description: string
+  title: string;
+  description: string;
 }
 
 const items: WhyChooseItem[] = [
   {
-    title: 'High Standards',
-    description: 'We produce clean, modern, high quality, user-friendly and engaging products that strengthen connections with your customers and infuses credibility into your company.'
+    title: "High Standards",
+    description:
+      "We produce clean, modern, high quality, user-friendly and engaging products that strengthen connections with your customers and infuses credibility into your company.",
   },
   {
-    title: 'Experienced Engineers',
-    description: 'Our engineers have many years of experience in their respective specialties. This ensures that the work we are doing for you is done using best practices.'
+    title: "Experienced Engineers",
+    description:
+      "Our engineers have many years of experience in their respective specialties. This ensures that the work we are doing for you is done using best practices.",
   },
   {
-    title: 'Affordable Rates',
-    description: 'Our goal is to reach out to as many clients as possible by offering more affordable rates than our competitors. Having experts based in Asia, we are able to make this possible.'
-  }
-]
+    title: "Affordable Rates",
+    description:
+      "Our goal is to reach out to as many clients as possible by offering more affordable rates than our competitors. Having experts based in Asia, we are able to make this possible.",
+  },
+];
 
 export function WhyChooseUs() {
   return (
@@ -42,13 +45,14 @@ export function WhyChooseUs() {
           >
             {/* Heading */}
             <div className="mb-8 md:mb-12">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-balance">
+              <h2 className="text-3xl font-extrabold md:text-4xl lg:text-[44.5px]  leading-tight text-balance">
                 <span className="text-[#937c39]">Why You Should</span>
                 <br />
-                <span className="text-blue-900">Choose Us</span>
+                <span className="text-[#264B78]">Choose Us</span>
               </h2>
               <p className="text-gray-600 text-base md:text-lg mt-4 md:mt-6 leading-relaxed">
-                Here are just few reasons why you should choose us to develop your online presence.
+                Here are just few reasons why you should choose us to develop
+                your online presence.
               </p>
             </div>
 
@@ -64,18 +68,24 @@ export function WhyChooseUs() {
                   className="group"
                 >
                   <div className="flex gap-3 md:gap-4 p-4 md:p-6 rounded-lg">
-                    {/* Checkmark with hover background */}
                     <motion.div
-                      className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center
-                        group-hover:bg-[#264b78] transition-all ease-in-out delay-150 duration-300"
-                      initial={false}
-                      whileHover={{ 
-                        backgroundColor: '#1e3a8a',
-                        scale: 1.1
-                      }}
+                      className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center bg-white shadow-lg group-hover:bg-[#264b78] transition-all ease-in-out delay-150 duration-300 relative overflow-hidden"
+                      initial="rest"
+                      whileHover="hover"
+                      animate="rest"
                     >
+                      {/* Animated hover background */}
+                      <motion.span
+                        className="absolute inset-0 rounded-full bg-[#264b78]"
+                        variants={{
+                          rest: { scale: 0 },
+                          hover: { scale: 1 },
+                        }}
+                        transition={{ duration: 0.35, ease: "easeInOut" }}
+                      />
+
                       <svg
-                        className="w-6 h-6 text-[#264b78] transition-colors duration-300 group-hover:text-white"
+                        className="w-6 h-6 text-[#264b78] transition-colors duration-300 group-hover:text-white relative z-10"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -91,7 +101,7 @@ export function WhyChooseUs() {
 
                     {/* Content */}
                     <div className="min-w-0">
-                      <h3 className="text-lg md:text-2xl font-bold text-[#937c39] mb-1 md:mb-2">
+                      <h3 className="text-lg md:text-[22px] font-extrabold text-[#937c39] mb-1 md:mb-2">
                         {item.title}
                       </h3>
                       <p className="text-gray-600 text-sm leading-relaxed">
@@ -120,9 +130,8 @@ export function WhyChooseUs() {
 
           {/* Right side - Image Composition */}
           <div className="relative w-full max-w-[500px] mx-auto lg:mx-0 h-[400px] md:h-[500px] mt-12 lg:mt-0">
-            
             {/* Blue Arc Decoration */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8 }}
@@ -131,7 +140,7 @@ export function WhyChooseUs() {
             />
 
             {/* Trophy Image (Background, Right) */}
-            <motion.div 
+            <motion.div
               className="absolute top-8 right-0 w-[60%] h-[65%] z-10"
               initial={{ opacity: 0, x: 50, y: -20 }}
               whileInView={{ opacity: 1, x: 0, y: 0 }}
@@ -149,7 +158,7 @@ export function WhyChooseUs() {
             </motion.div>
 
             {/* Laptop Image (Foreground, Left) */}
-            <motion.div 
+            <motion.div
               className="absolute bottom-0 left-0 w-[65%] h-[70%] z-20"
               initial={{ opacity: 0, x: -50, y: 20 }}
               whileInView={{ opacity: 1, x: 0, y: 0 }}
@@ -167,7 +176,7 @@ export function WhyChooseUs() {
             </motion.div>
 
             {/* Dots Pattern Left */}
-            <motion.div 
+            <motion.div
               className="absolute -left-4 md:-left-8 top-1/2 -translate-y-1/2 grid grid-cols-3 gap-2 z-0"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -180,7 +189,7 @@ export function WhyChooseUs() {
             </motion.div>
 
             {/* Dots Pattern Bottom Right */}
-            <motion.div 
+            <motion.div
               className="absolute right-4 -bottom-8 grid grid-cols-5 gap-2 z-0"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -195,5 +204,5 @@ export function WhyChooseUs() {
         </div>
       </div>
     </section>
-  )
+  );
 }

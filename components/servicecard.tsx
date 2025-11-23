@@ -1,15 +1,21 @@
-"use client"
-import Image from "next/image"
-import { motion } from "framer-motion"
+"use client";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { ReactNode } from "react";
 
 interface ServiceCardProps {
-  image: string
-  title: string
-  description: string
-  index?: number
+  image: ReactNode;
+  title: string;
+  description: string;
+  index?: number;
 }
 
-const ServiceCard = ({ image, title, description, index = 0 }: ServiceCardProps) => {
+const ServiceCard = ({
+  image,
+  title,
+  description,
+  index = 0,
+}: ServiceCardProps) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 60 }}
@@ -24,24 +30,26 @@ const ServiceCard = ({ image, title, description, index = 0 }: ServiceCardProps)
     >
       <div className="absolute inset-0 bg-[#4b4b4b] rounded-2xl scale-0 group-hover:scale-100 transition-transform duration-500 origin-center -z-0"></div>
 
-      {/* Content wrapper with relative positioning */}
       <div className="relative z-10">
-        {/* Icon Container */}
-        <div className="w-20 h-20 rounded-full bg-[#e8f0ff] flex items-center justify-center mb-6 group-hover:bg-white/10 transition-colors duration-500">
-          <div className="relative w-10 h-10">
-            <Image
-              src={image || "/placeholder.svg"}
-              alt={title}
-              
-              width={150}
-              height={150}
-              className="object-contain transition-all duration-500"
-            />
+        <div className="w-20 h-20 rounded-full  flex items-center justify-center mb-6  transition-colors duration-500">
+          <motion.div
+            className="absolute w-24 h-14 bg-gray-200/50 group-hover:bg-gray-200/10 rounded-full top-5 left-4"
+            animate={{
+              y: [0, -10, 0],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+          <div className="relative w-10 h-10 text-[#264B78] text-6xl">
+            {image}
           </div>
         </div>
 
         {/* Title */}
-        <h3 className="text-xl font-bold text-[#b8975a] mb-4 group-hover:text-white transition-colors duration-500">
+        <h3 className="text-xl font-extrabold text-[#937C39] mb-4 group-hover:text-white transition-colors duration-500">
           {title}
         </h3>
 
@@ -51,7 +59,7 @@ const ServiceCard = ({ image, title, description, index = 0 }: ServiceCardProps)
         </p>
       </div>
     </motion.div>
-  )
-}
+  );
+};
 
-export default ServiceCard
+export default ServiceCard;

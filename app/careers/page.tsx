@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { useState, MouseEvent } from "react";
 import Image from "next/image";
@@ -47,16 +47,11 @@ export default function PortfolioPage() {
 
   return (
     <div className="min-h-screen flex flex-col">
-  
-       <HeroTitle
-  title="Careers"
-  leftText="Home"
-  rightText="careers"
-/>
+      <HeroTitle title="Careers" leftText="Home" rightText="careers" />
 
       {/* Main Content */}
       <main className="flex-1 bg-[#f7f7f7] py-20 relative">
-       <CareerSection />
+        <CareerSection />
       </main>
     </div>
   );

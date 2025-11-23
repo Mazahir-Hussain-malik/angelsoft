@@ -58,7 +58,7 @@ export default function Location() {
                 </span>
               </div>
             </motion.div>
-            <h1 className="text-[#B8934F] text-5xl lg:text-6xl font-bold mb-6">
+            <h1 className="text-[#B8934F] text-5xl lg:text-6xl font-extrabold mb-6">
               Talk To Us
             </h1>
             <p className="text-[#6B6B6B] text-base lg:text-lg mb-8 leading-relaxed">

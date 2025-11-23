@@ -1,6 +1,20 @@
 @import "tailwindcss";
 @custom-variant dark (&:is(.dark *));
 
+@font-face {
+  font-family: "Red Hat Display";
+  src: url("/fonts/Red_Hat_Display/RedHatDisplay-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+ * {
+  font-family: "Red Hat Display", sans-serif;
+}
+
+
+
 
  .clip-logo {
   clip-path: polygon(0 0, 100% 0, 92% 100%, 0% 100%);
@@ -32,10 +46,6 @@
   
 }
 
-* { 
-  font-family: "IBM Plex Sans", sans-serif;
-
-}
 
 body { 
   background-color: #f2f2f2;
@@ -192,4 +202,26 @@ padding: 5px 20px;
     transform: scale(1.1) translateZ(0);
   }
 }
+
+
+.icon-wrapper {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  font-size: 48px;
+  color: #1f3b6f;
+  position: relative;
+  z-index: 5;
+}
+
+
+
+
+
 

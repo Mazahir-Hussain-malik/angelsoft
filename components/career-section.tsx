@@ -1,84 +1,45 @@
 "use client";
 import Button from "./ui/button";
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function CareerSection() {
   return (
-    <section className="relative bg-gradient-to-b from-gray-50 to-white py-20 overflow-hidden">
-      {/* Decorative dot pattern - top left */}
-      <div className="absolute left-8 top-20 grid grid-cols-9 gap-1.5 opacity-40">
-        {Array.from({ length: 81 }).map((_, i) => (
-          <div key={i} className="w-1.5 h-1.5 rounded-full bg-gray-400" />
-        ))}
-      </div>
+    <section className="relative bg-gradient-to-b py-20 from-gray-50 to-white overflow-hidden">
+      <div className=" mx-auto px-4 max-w-7xl relative z-10  mb-12  ">
+        {/* bg svg  */}
 
-      {/* Decorative curved line - top right */}
-      <div className="absolute right-20 top-8 w-64 h-48 opacity-30">
-        <svg viewBox="0 0 200 150" className="w-full h-full">
-          <path
-            d="M10,75 Q50,20 100,40 T190,75"
-            fill="none"
-            stroke="#d1d5db"
-            strokeWidth="2"
-            strokeLinecap="round"
-          />
-        </svg>
-      </div>
-
-      {/* Decorative dot pattern - bottom right */}
-      <div className="absolute right-8 bottom-32 grid grid-cols-9 gap-1.5 opacity-40">
-        {Array.from({ length: 81 }).map((_, i) => (
-          <div key={i} className="w-1.5 h-1.5 rounded-full bg-gray-400" />
-        ))}
-      </div>
-
-      {/* Wave decoration at bottom */}
-      <div className="absolute bottom-0 left-0 right-0 h-32">
-        <svg
-          viewBox="0 0 1440 120"
-          className="w-full h-full"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M0,60 C240,100 480,100 720,60 C960,20 1200,20 1440,60 L1440,120 L0,120 Z"
-            fill="#f9fafb"
-            opacity="0.5"
-          />
-        </svg>
-      </div>
-
-      <div className="container mx-auto px-4 max-w-7xl relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-6">
             {/* Career Badge */}
             <motion.div
-      animate={{
-        y: [0, -20, 0],
-        scaleY: [1, 1.1, 0.9, 1.05, 1],
-        scaleX: [1, 0.95, 1.05, 0.98, 1],
-      }}
-      transition={{
-        duration: 1.5,
-        times: [0, 0.4, 0.6, 0.8, 1],
-        repeat: Infinity,
-        repeatDelay: 1,
-        ease: "easeInOut",
-      }}
-    >
-      <div className=" mb-4 sm:mb-4 md:mb-5 lg:mb-6">
-        <span className=" bg-white shadow-lg text-[#264B78] sm:w-[150px] flex justify-center items-center h-[40px] text-center rounded-full text-xs sm:text-sm font-semibold tracking-wide">
-          Career
-        </span>
-      </div>
-    </motion.div>
+              animate={{
+                y: [0, -20, 0],
+                scaleY: [1, 1.1, 0.9, 1.05, 1],
+                scaleX: [1, 0.95, 1.05, 0.98, 1],
+              }}
+              transition={{
+                duration: 1.5,
+                times: [0, 0.4, 0.6, 0.8, 1],
+                repeat: Infinity,
+                repeatDelay: 1,
+                ease: "easeInOut",
+              }}
+            >
+              <div className=" mb-4 sm:mb-4 md:mb-5 lg:mb-6">
+                <span className=" bg-white shadow-lg text-[#264B78] sm:w-[150px] flex justify-center items-center h-[40px] text-center rounded-full text-xs sm:text-sm font-semibold tracking-wide">
+                  Career
+                </span>
+              </div>
+            </motion.div>
 
             {/* Heading */}
             <div className="space-y-3">
-              <h2 className="text-4xl lg:text-4xl font-bold text-[#937c39] leading-tight">
+              <h2 className="text-4xl lg:text-[44.5px] font-extrabold text-[#937C39] leading-tight">
                 Looking for a New Career?
               </h2>
-              <h3 className="text-4xl lg:text-5xl font-bold text-[#264b78] leading-tight">
+              <h3 className="text-4xl lg:text-5xl font-extrabold text-[#264b78] leading-tight">
                 Join Us
               </h3>
             </div>
@@ -121,23 +82,107 @@ export default function CareerSection() {
 
             {/* Image 1: Man with headphones (Left, Behind) */}
             <div className="absolute top-0 left-0 w-[65%] h-[85%] z-10 rounded-2xl overflow-hidden shadow-lg">
-              <img
-                src="/chooseus1.png"
+              <Image
+                src="/chooseus2.png"
                 alt="Team member with headphones"
                 className="w-full h-full object-cover"
+                width={300}
+                height={300}
               />
             </div>
 
             {/* Image 2: Woman with laptop (Right, Front) */}
             <div className="absolute bottom-0 right-0 w-[65%] h-[85%] z-20 rounded-2xl overflow-hidden shadow-2xl border-8 border-white">
-              <img
-                src="/chooseus2.png"
+              <Image
+                src="/chooseus1.png"
                 alt="Team member working on laptop"
                 className="w-full h-full object-cover"
+                width={180}
+                height={180}
               />
             </div>
           </div>
         </div>
+
+        {/* Decorative dot pattern - top left */}
+        <div className="absolute left-2 top-1/4 -z-10 grid grid-cols-9 gap-1.5  ">
+          <motion.div
+            animate={{ scale: [1, 1.05, 1] }}
+            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <Image
+              src="/homepage/shape_13.svg"
+              width={300}
+              height={300}
+              alt="shape"
+            />
+          </motion.div>
+        </div>
+
+        {/* Decorative curved line - top right */}
+        <div className="absolute right-20 top-8 w-64 h-48 opacity-30">
+          <svg viewBox="0 0 200 150" className="w-full h-full">
+            <path
+              d="M10,75 Q50,20 100,40 T190,75"
+              fill="none"
+              stroke="#d1d5db"
+              strokeWidth="2"
+              strokeLinecap="round"
+            />
+          </svg>
+        </div>
+
+        {/* Decorative dot pattern - bottom right */}
+        <div className="absolute right-8 bottom-32 grid grid-cols-9 gap-1.5 opacity-40">
+          {Array.from({ length: 81 }).map((_, i) => (
+            <div key={i} className="w-1.5 h-1.5 rounded-full bg-gray-400" />
+          ))}
+        </div>
+
+        {/* Wave decoration at bottom */}
+        <div className="absolute bottom-0 left-0 -z-10 right-0 h-32">
+          <svg
+            viewBox="0 0 1440 120"
+            className="w-full h-full"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M0,60 C240,100 480,100 720,60 C960,20 1200,20 1440,60 L1440,120 L0,120 Z"
+              fill="#f9fafb"
+              opacity="0.5"
+            />
+          </svg>
+        </div>
+      </div>
+
+      <div className="absolute top-0 left-0">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1920"
+          height="900"
+          viewBox="0 0 1920 900"
+          preserveAspectRatio="xMidYMid slice"
+          role="img"
+          aria-label="Wavy bottom shape"
+        >
+          <rect width="100%" height="100%" fill="#f7f7f7" />
+
+          <path
+            d="
+        M0 900
+        L0 670
+        C140 630 320 610 480 610
+        C640 610 760 650 920 650
+        C1080 650 1160 610 1320 610
+        C1480 610 1620 630 1760 650
+        C1840 662 1900 675 1920 682
+        L1920 900
+        Z
+      "
+            fill="#ffffff"
+            stroke="none"
+          />
+        </svg>
       </div>
     </section>
   );

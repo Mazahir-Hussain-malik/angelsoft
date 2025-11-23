@@ -1,7 +1,6 @@
 "use client";
-
-import { useState, MouseEvent } from "react";
 import { motion } from "framer-motion";
+import { useState, MouseEvent } from "react";
 import Image from "next/image";
 import React from "react";
 
@@ -41,7 +40,7 @@ const HeroTitle: React.FC<HeroTitleProps> = ({
 
   return (
     <div
-      className="relative min-h-[65vh] flex items-center justify-center bg-gradient-to-r from-black/70 to-black/50 overflow-hidden"
+      className="relative w-full min-h-[65vh]  flex items-end justify-center bg-gradient-to-r from-black/70 to-black/50 overflow-hidden"
       onMouseMove={handleMouseMove}
     >
       <motion.div
@@ -81,7 +80,7 @@ const HeroTitle: React.FC<HeroTitleProps> = ({
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/60 z-0" />
 
-      {/* Bubbles Effect */}
+      
       {bubbles.map((bubble) => (
         <motion.div
           key={bubble.id}
@@ -97,17 +96,18 @@ const HeroTitle: React.FC<HeroTitleProps> = ({
           }}
         />
       ))}
-
+    
+      
       {/* Text */}
-      <div className="relative z-10 text-center rounded-md px-6 py-4">
-        <h1 className="text-5xl font-bold mb-6 text-white">{title}</h1>
+      <div className="relative z-10 text-center rounded-md px-6 py-4 mb-16">
+        <h1 className="sm:text-[58px] text-[40px] font-extrabold mb-3 text-white">{title}</h1>
 
-        <div className="flex items-center bg-white py-1 rounded-full justify-center gap-2 text-sm text-[#2c4a6f]">
-          <span className="bg-white text-[#937c39] px-4 py-2 rounded-full">
+        <div className="flex items-center bg-white sm:w-auto w-[200px] py-1 rounded-full justify-center gap-2 text-sm text-[#2c4a6f]">
+          <span className="bg-white text-[#937c39]/80 font-bold px-1 py-2 rounded-full">
             {leftText}
           </span>
           <span className="text-[#264b78]">/</span>
-          <span className="bg-white text-[#937c39] px-4 py-2 rounded-full">
+          <span className="bg-white text-[#937c39]/80 font-bold px-1 py-2 rounded-full">
             {rightText}
           </span>
         </div>

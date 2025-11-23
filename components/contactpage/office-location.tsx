@@ -29,7 +29,7 @@ function OfficeCard({ title, location, phone, index }: OfficeCardProps) {
         </div>
 
         <div className="relative z-10">
-          <h3 className="text-2xl md:text-3xl font-bold mb-4 text-[#b8975a] group-hover:text-white transition-colors duration-500">
+          <h3 className="text-2xl md:text-3xl font-extrabold mb-4 text-[#b8975a] group-hover:text-white transition-colors duration-500">
             {title}
           </h3>
 
@@ -87,7 +87,7 @@ export default function OfficeLocations() {
   ]
 
   return (
-    <section className="py-20  bg-[#f7f7f7] relative">
+    <section className="py-20  bg-[#ececec] relative">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {offices.map((office, index) => (

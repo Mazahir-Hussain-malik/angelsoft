@@ -77,14 +77,14 @@ const Footer = () => {
             <h3 className="text-2xl font-semibold mb-3 text-white">About Us</h3>
             <div className="flex gap-1 mb-8">
               {[...Array(8)].map((_, i) => (
-                <div key={i} className="w-1.5 h-1.5 rounded-full bg-blue-500" />
+                <div key={i} className="w-1.5 h-0.5 bg-[#264B78]" />
               ))}
             </div>
 
-            <h3 className="text-2xl font-bold mb-2 leading-tight">
-              Ready To Start <span className="text-white font-bold">Work</span>
+            <h3 className="text-2xl font-extrabold mb-2 leading-tight">
+              Ready To Start <span className="text-white font-extrabold">Work</span>
             </h3>
-            <h3 className="text-2xl font-bold mb-6 leading-tight">With Us?</h3>
+            <h3 className="text-2xl font-extrabold mb-6 leading-tight">With Us?</h3>
 
             <p className="text-slate-400 text-[15px] leading-relaxed mb-8 max-w-[280px]">
               Send us a message describing your ideas or project, and we&apos;ll
@@ -92,7 +92,7 @@ const Footer = () => {
             </p>
 
             <motion.button
-              className="px-8 py-3.5 bg-[#264b78] hover:bg-[#2563eb] text-white rounded-full font-medium text-[15px] shadow-lg"
+              className="px-8 py-3.5 bg-[#264b78] hover:bg-[#293646] text-white rounded-full font-medium text-[15px] shadow-lg"
               variants={buttonVariants}
               whileHover="hover"
               whileTap="tap"
@@ -129,7 +129,7 @@ const Footer = () => {
                 <motion.a
                   key={index}
                   href={href}
-                  className="w-11 h-11 bg-[#475569] hover:bg-[#264b78] rounded-full flex items-center justify-center transition-colors duration-200"
+                  className="w-11 h-11 bg-[#475569] hover:text-[#475569] hover:bg-[#fff] rounded-full flex items-center justify-center transition-colors duration-200"
                   variants={socialIconVariants}
                   whileHover="hover"
                   whileTap="tap"
@@ -149,7 +149,7 @@ const Footer = () => {
             </h3>
             <div className="flex gap-1 mb-8">
               {[...Array(8)].map((_, i) => (
-                <div key={i} className="w-1.5 h-1.5 rounded-full bg-blue-500" />
+                 <div key={i} className="w-1.5 h-0.5 bg-[#264B78]" />
               ))}
             </div>
 
@@ -170,7 +170,7 @@ const Footer = () => {
                     href="#"
                     className="text-slate-400 hover:text-white transition-colors duration-200 flex items-center gap-2 text-[15px]"
                   >
-                    <span className="w-2 h-2 rounded-full bg-blue-500/70" />
+                    <span className="w-2 h-2 rotate-45 transition delay-150 group-hover:rotate-0 bg-[#264B78]/40" />
                     {link}
                   </a>
                 </motion.li>
@@ -184,11 +184,11 @@ const Footer = () => {
             </h3>
             <div className="flex gap-1 mb-8">
               {[...Array(8)].map((_, i) => (
-                <div key={i} className="w-1.5 h-1.5 rounded-full bg-blue-500" />
+                <div key={i} className="w-1.5 h-0.5 bg-[#264B78]" />
               ))}
             </div>
 
-            <ul className="space-y-4">
+            <ul className="space-y-4 " >
               {[
                 "Web Design/Development",
                 "E-commerce Development",
@@ -204,9 +204,9 @@ const Footer = () => {
                 >
                   <a
                     href="#"
-                    className="text-slate-400 hover:text-white transition-colors duration-200 flex items-center gap-2 text-[15px]"
+                    className="text-slate-400 hover:underline hover:text-white transition-colors group duration-200 transition delay-150 flex items-center gap-2 text-[15px]"
                   >
-                    <span className="w-2 h-2 rounded-full bg-blue-500/70" />
+                    <span className="w-2 h-2 rotate-45 transition delay-150 group-hover:rotate-0 bg-[#264B78]/40" />
                     {service}
                   </a>
                 </motion.li>
@@ -220,7 +220,7 @@ const Footer = () => {
             </h3>
             <div className="flex gap-1 mb-8">
               {[...Array(8)].map((_, i) => (
-                <div key={i} className="w-1.5 h-1.5 rounded-full bg-blue-500" />
+                 <div key={i} className="w-1.5 h-0.5 bg-[#264B78]" />
               ))}
             </div>
 
@@ -247,7 +247,7 @@ const Footer = () => {
               </div>
 
               <motion.button
-                className="w-full px-6 py-3.5 bg-[#264b78] hover:bg-[#2563eb] text-white rounded-full font-medium text-[15px] shadow-lg"
+                className="w-full px-6 py-3.5 bg-[#264b78] hover:bg-[#1c2531] text-white rounded-full font-medium text-[15px] shadow-lg"
                 variants={buttonVariants}
                 whileHover="hover"
                 whileTap="tap"

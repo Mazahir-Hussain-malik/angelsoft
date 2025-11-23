@@ -6,6 +6,17 @@ import { motion, AnimatePresence } from "framer-motion"
 import HeroTitle from "@/components/hero-title"
 import  Button  from "@/components/ui/button"
 import { ArrowUp } from "lucide-react"
+import { FaLaptop } from "react-icons/fa";
+import { FaStore } from "react-icons/fa";
+import { FaMobileScreenButton } from "react-icons/fa6";
+import { FaCubes } from "react-icons/fa";
+import { FaPeopleGroup } from "react-icons/fa6";
+import { FaPersonCirclePlus } from "react-icons/fa6";
+import { FaPalette } from "react-icons/fa";
+import { FaLightbulb } from "react-icons/fa";
+import { FaChartLine } from "react-icons/fa6";
+import { FaLanguage } from "react-icons/fa6";
+
 
 const ServicesPage = () => {
   const [showScrollTop, setShowScrollTop] = useState(false)
@@ -29,61 +40,61 @@ const ServicesPage = () => {
 
   const services = [
     {
-      image: "/icons/icon-1.png",
+      image: <FaLaptop />,
       title: "Web Design & Development",
       description:
         "We design and develop modern, clean, engaging, user-friendly and SEO-friendly websites using popular CMS like WordPress, Joomla, Drupal, and Umbraco. We also develop custom websites and REST APIs.",
     },
     {
-      image: "/icons/icon-2.png",
+      image: <FaStore />,
       title: "E-commerce Development",
       description:
         "We develop online stores using today's most popular platforms like BigCommerce, WooCommerce, Magento, Shopify and Prestashop. We also develop custom e-commerce sites and apps.",
     },
     {
-      image: "/icons/icon-3.png",
+      image: <FaMobileScreenButton />,
       title: "Mobile App Development",
       description:
         "We develop high quality and high performance mobile apps using today's most popular technologies such as React Native and Flutter. We can also deploy your apps to the app stores.",
     },
     {
-      image: "/icons/icon-4.png",
+      image: <FaCubes />,
       title: "Corporation Branding",
       description:
         "We conceptualize strategies that effectively promote your brand. We can design your brand's logo, letterhead, and calling cards. We can also help you outline your company values, mission and vision.",
     },
     {
-      image: "/icons/icon-5.png",
+      image: <FaPeopleGroup />,
       title: "Recruitment Outsourcing",
       description:
         "Reduce costs by letting us handle your recruitment process. Our recruitment team has broad connections and technical knowledge to find the perfect candidates for your requirement.",
     },
     {
-      image: "/icons/icon-6.png",
+      image: <FaPersonCirclePlus />,
       title: "Staff Augmentation",
       description:
         "Looking for temporary staff to quickly fill short-term job positions within your company? We have a pool of developers who are skilled and experienced in today's most popular technologies.",
     },
     {
-      image: "/icons/icon-7.png",
+      image: <FaPersonCirclePlus />,
       title: "UI/UX Design",
       description:
         "We create beautiful and engaging UI/UX designs that provide better experience to your users, and deliver tangible business results.",
     },
     {
-      image: "/icons/icon-8.png",
+      image: <FaPalette />,
       title: "Business Planning",
       description:
         "We provide business planning services by helping you define your business goals, conducting market research, identifying resources, and developing strategies.",
     },
     {
-      image: "/icons/icon-9.png",
+      image: <FaLightbulb />,
       title: "Enterprise Analysis",
       description:
         "We can help you identify business opportunities, develop and maintain a business architecture, and determine optimum project investments.",
     },
     {
-      image: "/icons/icon-10.png",
+      image: <FaChartLine />,
       title: "Translation Services",
       description:
         "We can translate from English to Chinese, Russian, Spanish, Romanian, Portuguese, Filipino, Korean, Japanese and vice versa.",
@@ -92,7 +103,7 @@ const ServicesPage = () => {
 
   return (
     <>
-      <div className="min-h-screen bg-gray-50 relative overflow-hidden">
+      <div className="min-h-screen bg-[#f2f2f2] relative overflow-hidden">
         {/* Hero Section */}
         <HeroTitle title="Services" leftText="Home" rightText="Services" />
 
@@ -111,7 +122,7 @@ const ServicesPage = () => {
                   ease: "easeInOut",
                 }}
               >
-                <Button text={"Our Members"} />
+                <Button text={"Our Services"} />
               </motion.div>
             </div>
 
