@@ -174,7 +174,9 @@ export default function Navbar() {
 
                     <div className="pt-2">
                       <Link href={"contact"}>
-                        <button className="w-full px-4 py-2 bg-[#264b78] text-white rounded-full font-semibold text-sm hover:bg-[#1e3b63] transition-colors">
+                        <button className="w-full px-4 py-2 bg-[#264b78] text-white rounded-full font-semibold text-sm hover:bg-[#1e3b63] transition-colors"
+                         onClick={() => setIsOpen(false)}
+                        >
                           Get In Touch
                         </button>
                       </Link>
